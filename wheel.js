@@ -53,7 +53,6 @@ function drawWheel() {
   options.forEach((option, i) => {
     const angle = i * sliceAngle + rotation;
 
-    // Draw slice
     ctx.beginPath();
     ctx.moveTo(center, center);
     ctx.arc(center, center, radius, angle, angle + sliceAngle);
@@ -61,8 +60,6 @@ function drawWheel() {
     ctx.fill();
     ctx.strokeStyle = "#001b24";
     ctx.stroke();
-
-    // Draw text
     ctx.save();
     ctx.translate(center, center);
     ctx.rotate(angle + sliceAngle / 2);
@@ -70,8 +67,7 @@ function drawWheel() {
     ctx.fillStyle = "#000";
     ctx.textAlign = "center";
     ctx.textBaseline = "middle";
-
-    // Dynamic font size based on slice size
+    
     let fontSize = Math.min(18, (sliceAngle * 180 / Math.PI) * 0.6);
     fontSize = Math.max(fontSize, 10);
 
@@ -128,7 +124,7 @@ function spinWheel() {
 
   const winningIndex = Math.floor(Math.random() * options.length);
 
-  const pointerAngle = -Math.PI / 2; // pointer at top
+  const pointerAngle = -Math.PI / 2;
 
   const targetAngle =
     (2 * Math.PI - (winningIndex * sliceAngle + sliceAngle / 2)) + pointerAngle;
@@ -233,15 +229,15 @@ nextBtn.addEventListener("click", () => {
   spinBtn.textContent = "SPIN";
   hasSpunCurrentWheel = false;
 
-  // 🔥 CONTROL RESET VISIBILITY HERE
+  // CONTROL RESET VISIBILITY
   if (currentWheel === wheels.length - 1) {
     nextBtn.style.display = "none";
-    resetBtnBottom.style.display = "inline-block"; // show immediately
+    resetBtnBottom.style.display = "inline-block";
   } else {
     nextBtn.disabled = true;
     nextBtn.classList.add("disabled");
     nextBtn.style.display = "inline-block";
-    resetBtnBottom.style.display = "none"; // hide on other wheels
+    resetBtnBottom.style.display = "none"; 
   }
 });
 
@@ -255,31 +251,23 @@ const resetBtn = document.getElementById("resetBtn");
 
 resetBtn.addEventListener("click", () => {
 
-  // Go back to first wheel
   currentWheel = 0;
 
-  // Reset wheel visuals
   rotation = 0;
   drawWheel();
 
   wheelTitle.textContent = wheels[currentWheel].title;
 
-  // Clear results array
   results = [];
 
   document.getElementById("summaryCases").textContent = "";
   document.getElementById("summaryPrice").textContent = "";
   document.getElementById("summaryRules").textContent = "";
 
-  // Reset spin state
   spinning = false;
   hasSpunCurrentWheel = false;
 
-  // Reset spin button
   spinBtn.textContent = "SPIN";
-
-  // 🔥 IMPORTANT PART
-  // Show NEXT but keep it disabled
   nextBtn.style.display = "inline-block";
   nextBtn.disabled = true;
   nextBtn.classList.add("disabled");
@@ -288,5 +276,5 @@ resetBtn.addEventListener("click", () => {
 });
 
 resetBtnBottom.addEventListener("click", () => {
-  resetBtn.click(); // triggers your existing reset logic
+  resetBtn.click(); 
 });

@@ -1,7 +1,3 @@
-/* ==========================
-   GLOBAL
-========================== */
-
 :root{
   --font-primary: 'Nexa Heavy', system-ui, sans-serif;
     --font-size-base: 16px;
@@ -13,17 +9,15 @@
   --card:#59a0fe;
   --glass: rgba(255,255,255,0.03);
   --muted:#59a0fe;
-  /* moved to a lighter blue palette */
-  --accent-1:#59a0fe; /* very light cyan */
-  --accent-2:#000000; /* bright sky blue */
-  --accent-3:#59a0fe; /* pale cyan */
+  --accent-1:#59a0fe;
+  --accent-2:#000000; 
+  --accent-3:#59a0fe; 
   --pill:#59a0fe;
   --glow: 0 26px 60px rgba(64, 179, 255, 0.12);
   font-synthesis: none;
   --easy-ease: cubic-bezier(.147,.89,.254,1);
 }
 
-/* fonts */
 @font-face {
   font-family: 'Nexa Heavy';
   src: url('Nexa-Heavy.ttf') format('truetype');
@@ -32,7 +26,6 @@
   font-display: swap;
 }
 
-/* base */
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
@@ -191,10 +184,9 @@ img { border-radius:50%; transition: transform .42s var(--easy-ease), box-shadow
 
 html,
 body {
-  scrollbar-width: thin; /* Firefox: thin, low‑profile scrollbar */
+  scrollbar-width: thin;
 }
 
-/* ENHANCED HEADER */
 .enhanced-header {
   background: linear-gradient(90deg, #00000070 0%, #002333 100%);
   background-size: 200% 200%;
@@ -218,7 +210,6 @@ body {
   font-size: 1.45rem;
   font-weight: 800;
   color: #cfffff;
-
   vertical-align: middle;
   text-transform: uppercase;
   background: linear-gradient(90deg, #7be9ff 0%, #eaffff 60%, #7be9ff 100%);
@@ -323,16 +314,12 @@ body {
   100% { background-position: 0% 50%; }
 }
 
-/* ==========================
-   CLEAN INSANE LAYOUT
-========================== */
-
 .wheel-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;   /* was centering vertically */
-  padding-top: 10px;             /* reduce top spacing */
+  justify-content: flex-start;   
+  padding-top: 10px;            
   margin-top: 0;
   text-align: center;
 }
@@ -341,7 +328,7 @@ body {
   position: relative;
   width: 600px;
   height: 600px;
-  margin: 10px 0 5px 0; /* reduced bottom margin */
+  margin: 10px 0 5px 0;
 }
 
 .wheel-title {
@@ -357,10 +344,6 @@ body {
     0 0 10px rgba(0, 195, 255, 0.336),
     inset 0 0 60px rgba(255,255,255,0.2);
 }
-
-/* ===== MOVE CURRENT RESULT TO RIGHT SIDE ===== */
-
-/* ===== LIVE SUMMARY CARD ===== */
 
 .wheel-row {
   display: flex;
@@ -399,7 +382,6 @@ body {
   max-width: 150px;
 }
 
-/* Responsive */
 @media (max-width: 1100px) {
   .wheel-row {
     flex-direction: column;
@@ -418,7 +400,6 @@ body {
   justify-content: center;
 }
 
-/* Pointer */
 .pointer-metal {
   position: absolute;
   top: -22px;
@@ -428,14 +409,12 @@ body {
   height: 0;
   z-index: 20;
 
-  /* Main arrow */
   border-left: 26px solid transparent;
   border-right: 26px solid transparent;
   border-top: 50px solid #ffc400;
 
 }
 
-/* Metallic inner highlight */
 .pointer-metal::before {
   content: "";
   position: absolute;
@@ -449,7 +428,6 @@ body {
   border-top: 38px solid rgba(255, 255, 255, 0.6);
 }
 
-/* Small top cap */
 .pointer-metal::after {
   content: "";
   position: absolute;
@@ -465,7 +443,6 @@ body {
     inset 0 0 8px rgba(255,255,255,0.7);
 }
 
-/* Buttons centered */
 .button-row {
   display: flex;
   justify-content: center;
@@ -525,7 +502,6 @@ body {
   box-shadow: 0 0 25px red;
 }
 
-/* Result Card */
 .result-card {
   margin-top: 20px;
   padding: 20px 40px;
@@ -540,7 +516,6 @@ body {
   justify-content: center;
 }
 
-/* Remove shake completely */
 .shake {
   animation: none;
 }
@@ -564,8 +539,6 @@ body {
   letter-spacing: 2px;
   color: #ffffff;
 }
-
-/* ===== FINAL SUMMARY MODAL ===== */
 
 .summary-overlay {
   position: fixed;
