@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WHEEL OF RAIN</title>
+  <link rel="icon" type="image/x-icon" href="logo.ico" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="blob-fixed-br"></div>
+  <div class="blob-fixed-bl"></div>
+  <header class="site-nav enhanced-header">
+    <div class="nav-left">
+      <div class="brand-lockup">
+        <span class="brand-glyph" aria-hidden="true"></span>
+        <span class="brand-title">WHEEL OF RAIN</span>
+      </div>
+    </div>
+    </div>
+  </header>
+<main class="wheel-container">
+
+  <div class="wheel-title-card">
+  <h1 id="wheel-title">SPIN FOR CASES</h1>
+</div>
+
+  <div class="wheel-row">
+
+  <div class="wheel-wrapper">
+    <div class="pointer-metal"></div>
+    <canvas id="wheelCanvas" width="560" height="560"></canvas>
+  </div>
+
+  <div class="live-summary-card">
+    <h2>BATTLE SETUP</h2>
+    <div class="summary-line">
+      <span>Cases:</span>
+      <span id="summaryCases"></span>
+    </div>
+    <div class="summary-line">
+      <span>Price Range:</span>
+      <span id="summaryPrice"></span>
+    </div>
+    <div class="summary-line">
+      <span>Rules:</span>
+      <span id="summaryRules"></span>
+    </div>
+          <button id="resetBtn" class="next-btn" style="margin-top:20px; width:100%;">RESET</button>
+  </div>
+
+</div>
+
+  <div class="button-row">
+  <button id="spinBtn" class="spin-btn">SPIN</button>
+  <button id="nextBtn" class="next-btn" style="display:none;">NEXT WHEEL</button>
+  <button id="resetBtnBottom" class="next-btn" style="display:none;">RESET</button>
+</div>
+
+</main>
+
+<audio id="tickSound" src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3"></audio>
+<audio id="winSound" src="https://assets.mixkit.co/active_storage/sfx/1435/1435-preview.mp3"></audio>
+
+<script src="wheel.js"></script>
+</script>
+</body>
+</html>
